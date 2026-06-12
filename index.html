@@ -118,7 +118,7 @@
 
         .logo {
             flex-shrink: 0;
-            height: 45px;
+            height: 50px;
             display: flex;
             align-items: center;
             gap: 0.75rem;
@@ -126,10 +126,11 @@
         }
 
         .logo-img {
-            height: 45px;
+            height: 50px;
             width: auto;
             object-fit: contain;
             filter: brightness(0) invert(1);
+            display: block;
         }
 
         .logo-icon {
@@ -137,14 +138,13 @@
             height: 45px;
             background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-light) 100%);
             border-radius: 8px;
-            display: flex;
+            display: none;
             align-items: center;
             justify-content: center;
             color: var(--white);
             font-weight: 700;
             font-size: 1.2rem;
             box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
-            display: none;
         }
 
         .logo-text {
@@ -159,7 +159,7 @@
             height: 100%;
             width: auto;
             object-fit: contain;
-            display: none;
+            display: block;
         }
 
         nav {
@@ -908,6 +908,10 @@
 
         /* RESPONSIVE */
         @media (max-width: 768px) {
+            .logo-img {
+                height: 40px;
+            }
+
             .logo-text {
                 display: block;
             }
