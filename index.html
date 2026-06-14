@@ -258,7 +258,7 @@
             color: var(--white);
             padding: 6rem 2rem 4rem;
             background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 64, 153, 0.6) 100%), 
-                        url('./background_top.webp') center / cover;
+                        url('./background_top.jpg') center / cover;
             background-attachment: fixed;
         }
 
@@ -489,7 +489,7 @@
         }
 
         .product-card-content h3 {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             margin-bottom: 0.75rem;
             color: var(--text-dark);
         }
@@ -782,7 +782,7 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2.5rem;
+            gap: 4rem;
             margin-bottom: 2rem;
         }
 
@@ -801,7 +801,7 @@
             color: rgba(255, 255, 255, 0.8);
             font-size: 0.95rem;
             line-height: 1.7;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
         }
 
         .footer-section a {
@@ -815,6 +815,18 @@
 
         .footer-section a:hover {
             color: var(--primary-light);
+        }
+
+        /* Links Rápidos em linha */
+        .footer-section:nth-child(2) {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-section:nth-child(2) > a {
+            display: inline;
+            margin-right: 1.5rem;
+            margin-bottom: 0;
         }
 
         .social-links {
@@ -1116,33 +1128,29 @@
     <!-- PRODUTOS SECTION -->
     <section class="products" id="produtos">
         <div class="container">
-            <h2>Nossos Produtos & Serviços</h2>
-            <p class="section-subtitle">Soluções completas para impressão offset de alta qualidade</p>
+            <h2>Produtos</h2>
 
             <div class="products-grid">
                 <div class="product-card">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 250'%3E%3Cdefs%3E%3ClinearGradient id='bg1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%230066cc;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23003d99;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='250' fill='url(%23bg1)'/%3E%3Ctext x='200' y='125' text-anchor='middle' dominant-baseline='middle' font-family='Poppins, Arial' font-size='20' font-weight='bold' fill='white'%3EPlacas PS&3C/text%3E%3C/svg%3E" alt="Placas PS">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 250'%3E%3Cdefs%3E%3ClinearGradient id='bg1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23666666;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23333333;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='250' fill='url(%23bg1)'/%3E%3Ctext x='200' y='125' text-anchor='middle' dominant-baseline='middle' font-family='Poppins, Arial' font-size='16' font-weight='bold' fill='white'%3EPlaca T-20 Process Free%3C/text%3E%3C/svg%3E" alt="Placa T-20 Process Free">
                     <div class="product-card-content">
-                        <h3>Placas PS de Alta Resolução</h3>
-                        <p>Placas presensibilizadas com qualidade premium para impressão offset. Suporta padrões ISO 9001 e certificações internacionais.</p>
+                        <h3>Placa T-20 Process Free</h3>
                         <a href="#" class="btn">Saiba Mais</a>
                     </div>
                 </div>
 
                 <div class="product-card">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 250'%3E%3Cdefs%3E%3ClinearGradient id='bg2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23666666;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23333333;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='250' fill='url(%23bg2)'/%3E%3Ctext x='200' y='125' text-anchor='middle' dominant-baseline='middle' font-family='Poppins, Arial' font-size='20' font-weight='bold' fill='white'%3EQuímicos Especializados%3C/text%3E%3C/svg%3E" alt="Produtos Químicos">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 250'%3E%3Cdefs%3E%3ClinearGradient id='bg2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23666666;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23333333;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='250' fill='url(%23bg2)'/%3E%3Ctext x='200' y='125' text-anchor='middle' dominant-baseline='middle' font-family='Poppins, Arial' font-size='16' font-weight='bold' fill='white'%3EPlaca X-UV Térmica CTP%3C/text%3E%3C/svg%3E" alt="Placa X-UV Térmica CTP">
                     <div class="product-card-content">
-                        <h3>Químicos e Acessórios</h3>
-                        <p>Linha completa de químicos especializados e acessórios para impressão offset, com compatibilidade garantida com nossas placas.</p>
+                        <h3>Placa X-UV Térmica CTP</h3>
                         <a href="#" class="btn">Saiba Mais</a>
                     </div>
                 </div>
 
                 <div class="product-card">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 250'%3E%3Cdefs%3E%3ClinearGradient id='bg3' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%239c27b0;stop-opacity:0.9' /%3E%3Cstop offset='100%25' style='stop-color:%23c2185b;stop-opacity:0.9' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='250' fill='url(%23bg3)'/%3E%3Ctext x='200' y='125' text-anchor='middle' dominant-baseline='middle' font-family='Poppins, Arial' font-size='20' font-weight='bold' fill='white'%3ESuporte Técnico 24/7%3C/text%3E%3C/svg%3E" alt="Suporte Técnico">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 250'%3E%3Cdefs%3E%3ClinearGradient id='bg3' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23666666;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23333333;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='250' fill='url(%23bg3)'/%3E%3Ctext x='200' y='125' text-anchor='middle' dominant-baseline='middle' font-family='Poppins, Arial' font-size='16' font-weight='bold' fill='white'%3EPlaca HS-920 UV CTP Positiva%3C/text%3E%3C/svg%3E" alt="Placa HS-920 UV CTP Positiva">
                     <div class="product-card-content">
-                        <h3>Suporte Técnico 24/7</h3>
-                        <p>Equipe técnica especializada com décadas de experiência, disponível para consultoria, treinamento e suporte contínuo.</p>
+                        <h3>Placa HS-920 UV CTP Positiva</h3>
                         <a href="#" class="btn">Saiba Mais</a>
                     </div>
                 </div>
@@ -1210,7 +1218,7 @@
                     <a href="#" class="btn">Conheça Nossa História</a>
                 </div>
                 <div class="about-image">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 500'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%230066cc;stop-opacity:0.1' /%3E%3Cstop offset='100%25' style='stop-color:%23004099;stop-opacity:0.1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='500' fill='%23f5f7fa'/%3E%3Crect width='400' height='500' fill='url(%23grad)'/%3E%3Ctext x='200' y='250' text-anchor='middle' dominant-baseline='middle' font-family='Poppins, Arial' font-size='16' font-weight='500' fill='%23616d7d'%3EAmbiente de Trabalho%3C/text%3E%3C/svg%3E" alt="Ambiente de Trabalho Top High">
+                    <img src="./worker.jpg" alt="Ambiente de Trabalho Top High">
                 </div>
             </div>
 
@@ -1241,51 +1249,35 @@
             <div class="footer-section">
                 <h4>Top High Imagem Brasil</h4>
                 <p>Fornecedor de placas de impressão offset premium, com tecnologia de ponta e compromisso com a excelência desde 1998.</p>
-                <div class="social-links">
-                    <a href="#" title="Facebook">f</a>
-                    <a href="#" title="Instagram">📷</a>
-                    <a href="#" title="LinkedIn">in</a>
-                </div>
             </div>
 
             <div class="footer-section">
                 <h4>Links Rápidos</h4>
+                <a href="#hero">Início</a>
                 <a href="#produtos">Produtos</a>
-                <a href="#beneficios">Diferenciais</a>
                 <a href="#sobre">Sobre Nós</a>
                 <a href="#contato">Contato</a>
-                <a href="#">Política de Privacidade</a>
             </div>
 
             <div class="footer-section">
                 <h4>Contato</h4>
                 <p>📞 <strong>Telefone:</strong></p>
                 <a href="tel:+551133334444">+55 (11) 3333-4444</a>
-                <p style="margin-top: 1rem;">📧 <strong>E-mail:</strong></p>
+                <p style="margin-top: 1.5rem;">📧 <strong>E-mail:</strong></p>
                 <a href="mailto:contato@tophighbrasil.com.br">contato@tophighbrasil.com.br</a>
-                <p style="margin-top: 1rem;">📍 <strong>Endereço:</strong><br>São Paulo, SP, Brasil</p>
+                <p style="margin-top: 1.5rem;">📍 <strong>Endereço:</strong><br>São Paulo, SP, Brasil</p>
             </div>
 
-            <div class="footer-section">
-                <h4>Newsletter</h4>
-                <p>Receba atualizações sobre nossos produtos e serviços.</p>
-                <form style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1rem;" onsubmit="event.preventDefault();">
-                    <input type="email" placeholder="Seu e-mail" style="padding: 0.75rem; border: none; border-radius: 6px; font-size: 0.9rem;">
-                    <button type="submit" class="cta-button" style="width: 100%; text-align: center; border: none;">Inscrever</button>
-                </form>
-            </div>
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2025 Top High Imagem Brasil. Todos os direitos reservados.</p>
+            <p>&copy; 2026 Top High Imagem Brasil. Todos os direitos reservados.</p>
         </div>
     </footer>
 
     <!-- WHATSAPP BUTTON -->
     <a href="https://wa.me/5511999999999?text=Olá! Gostaria de receber mais informações sobre os produtos da Top High Imagem Brasil." target="_blank" rel="noopener noreferrer" class="whatsapp-button" title="Enviar mensagem via WhatsApp">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-        </svg>
+        <img src="./whats.svg" alt="WhatsApp" width="32" height="32">
     </a>
 
     <script>
