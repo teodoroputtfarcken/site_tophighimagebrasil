@@ -110,6 +110,7 @@
             justify-content: space-between;
             align-items: center;
             height: auto;
+            position: relative;
         }
 
         .logo {
@@ -129,14 +130,6 @@
             object-fit: contain;
             filter: brightness(0) invert(1);
             display: block;
-        }
-
-        .logo-text {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: var(--white);
-            display: none;
         }
 
         .logo img {
@@ -204,6 +197,8 @@
             flex-direction: column;
             cursor: pointer;
             gap: 5px;
+            z-index: 1001;
+            position: relative;
         }
 
         .hamburger span {
@@ -580,11 +575,12 @@
             height: 32px;
         }
 
-        /* MOBILE MENU */
+        /* MOBILE MENU - CORREÇÃO PRINCIPAL */
         #nav-menu {
             display: flex;
             gap: 3.5rem;
             align-items: center;
+            pointer-events: none;
         }
 
         #nav-menu.mobile-active {
@@ -600,6 +596,8 @@
             box-shadow: var(--shadow-lg);
             animation: slideInDown 0.3s ease-out;
             z-index: 999;
+            pointer-events: auto;
+            overflow-y: auto;
         }
 
         #nav-menu.mobile-active a {
@@ -628,15 +626,15 @@
                 height: 40px;
             }
 
-            .logo-text {
-                display: block;
-            }
-
             nav {
                 display: none;
             }
 
             #nav-menu {
+                display: none;
+            }
+
+            #nav-menu.mobile-active {
                 display: flex;
             }
 
@@ -755,12 +753,10 @@
         <div class="header-content">
             <a href="index.html" class="logo">
                 <img src="./logo-tophighbrasil.webp" alt="Top High Imagem Brasil Logo" class="logo-img">
-                <span class="logo-text">Top High</span>
             </a>
 
             <nav id="nav-menu">
                 <a href="produtos.html">Produtos</a>
-                <a href="diferenciais.html">Diferenciais</a>
                 <a href="sobre.html">Sobre Nós</a>
                 <a href="contato.html">Contato</a>
                 <a href="#" class="cta-button">Solicitar Orçamento</a>
