@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Top High Imagem Brasil</title>
+    <meta name="description" content="Entre em contato com a Top High Imagem Brasil. Tire suas dúvidas e receba mais informações sobre nossos produtos.">
+    
+    <!-- Google Fonts: Poppins + Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #0066cc;
+            --primary-dark: #004099;
+            --primary-light: #3385ff;
+            --accent-silver: #f5f7fa;
+            --accent-gray: #e8ecf1;
+            --text-dark: #1a1a2e;
+            --text-light: #616d7d;
+            --border-light: #d4dce6;
+            --white: #ffffff;
+            --success: #10b981;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.12);
+            --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.15);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        /* HEADER & NAVIGATION */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--text-dark);
+            box-shadow: var(--shadow-sm);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            background: var(--text-dark);
+            box-shadow: var(--shadow-md);
+            padding: 0.5rem 0;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: auto;
+            position: relative;
+        }
+
+        .logo {
+            flex-shrink: 0;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            animation: slideInLeft 0.6s ease-out;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .logo-img {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+            display: block;
+        }
+
+        .logo img {
+            height: 70%;
+            width: auto;
+            object-fit: contain;
+            display: block;
+        }
+
+        nav {
+            display: flex;
+            gap: 3.5rem;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-light);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary-light);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 0.65rem 1.75rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 102, 204, 0.4);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            z-index: 1001;
+            position: relative;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--white);
+            border-radius: 2px;
+            transition: 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* PAGE HEADER HERO */
+        .page-header {
+            margin-top: 70px;
+            position: relative;
+            overflow: hidden;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            padding: 6rem 2rem 4rem;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 64, 153, 0.6) 100%), 
+                        url('./background-page-products.png') center / cover;
+            background-attachment: fixed;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 64, 153, 0.5) 100%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .page-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(180deg, transparent 0%, rgba(26, 26, 46, 0.3) 100%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .page-header-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .page-header h1 {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            letter-spacing: -1px;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .page-header .subtitle {
+            font-size: clamp(1rem, 4vw, 1.5rem);
+            margin-bottom: 0;
+            font-weight: 400;
+            opacity: 0.95;
+            line-height: 1.5;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* CONTAINER */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* SEÇÕES */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        section h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 1rem;
+            text-align: center;
+            color: var(--text-dark);
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            animation: fadeInUp 0.8s ease-out 0.1s both;
+        }
+
+        /* CONTACT SECTION */
+        .contact-section {
+            background: linear-gradient(180deg, var(--accent-silver) 0%, var(--white) 100%);
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+            align-items: start;
+        }
+
+        .contact-info {
+            animation: fadeInUp 0.8s ease-out 0.1s both;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+        }
+
+        .contact-item {
+            margin-bottom: 2.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .contact-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .contact-label {
+            font-weight: 600;
+            color: var(--primary-blue);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .contact-value {
+            color: var(--text-dark);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-value a {
+            color: var(--primary-blue);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-value a:hover {
+            color: var(--primary-light);
+        }
+
+        .contact-desc {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-top: 0.5rem;
+        }
+
+        /* FORM SECTION */
+        .contact-form {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border-light);
+            border-radius: 6px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-submit {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+        }
+
+        .form-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 102, 204, 0.4);
+        }
+
+        /* FOOTER */
+        footer {
+            background: linear-gradient(135deg, var(--text-dark) 0%, #2d3a4f 100%);
+            color: var(--white);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 4rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .footer-section h4 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 1.25rem;
+            font-weight: 700;
+        }
+
+        .footer-section p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            line-height: 2rem;
+        }
+
+        .footer-section a {
+            display: inline-block;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 0.95rem;
+            margin-bottom: 0.75rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-light);
+        }
+
+        .footer-section:nth-child(2) {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-section:nth-child(2) > a {
+            display: inline;
+            margin-right: 1.5rem;
+            margin-bottom: 0;
+            line-height: 2.5rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* WHATSAPP BUTTON */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-lg);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            animation: pulse 2s ease-in-out infinite;
+            z-index: 999;
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+            animation: none;
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+        }
+
+        .whatsapp-button img {
+            width: 32px;
+            height: 32px;
+        }
+
+        /* MOBILE MENU - CORREÇÃO PRINCIPAL */
+        #nav-menu {
+            display: flex;
+            gap: 3.5rem;
+            align-items: center;
+            pointer-events: none;
+        }
+
+        #nav-menu.mobile-active {
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            flex-direction: column;
+            gap: 2rem;
+            background: var(--white);
+            padding: 2rem;
+            box-shadow: var(--shadow-lg);
+            animation: slideInDown 0.3s ease-out;
+            z-index: 999;
+            pointer-events: auto;
+            overflow-y: auto;
+        }
+
+        #nav-menu.mobile-active a {
+            color: var(--text-dark);
+            text-decoration: none;
+        }
+
+        #nav-menu.mobile-active a::after {
+            display: none;
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .logo-img {
+                height: 40px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            #nav-menu {
+                display: none;
+            }
+
+            #nav-menu.mobile-active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .header-content {
+                padding: 0.75rem 1.5rem;
+            }
+
+            section {
+                padding: 3.5rem 1.5rem;
+            }
+
+            .page-header {
+                min-height: 350px;
+                padding: 3rem 1.5rem;
+                margin-top: 70px;
+                background-attachment: scroll;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .page-header .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .whatsapp-button {
+                bottom: 1.5rem;
+                right: 1.5rem;
+                width: 55px;
+                height: 55px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-header {
+                min-height: 300px;
+                padding: 2rem 1rem;
+                background-attachment: scroll;
+            }
+
+            .page-header h1 {
+                font-size: 1.5rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .page-header .subtitle {
+                font-size: 0.95rem;
+            }
+
+            section {
+                padding: 2.5rem 1rem;
+            }
+
+            section h2 {
+                font-size: 1.75rem;
+            }
+
+            .contact-form {
+                padding: 1.5rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header id="header">
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <img src="./logo-tophighbrasil.webp" alt="Top High Imagem Brasil Logo" class="logo-img">
+            </a>
+
+            <nav id="nav-menu">
+                <a href="produtos.html">Produtos</a>
+                <a href="sobre.html">Sobre Nós</a>
+                <a href="contato.html">Contato</a>
+                <a href="#" class="cta-button">Solicitar Orçamento</a>
+            </nav>
+
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- PAGE HEADER -->
+    <section class="page-header" id="hero">
+        <div class="page-header-content">
+            <h1>Entre em Contato</h1>
+            <p class="subtitle">Estamos prontos para responder suas dúvidas e oferecer soluções</p>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-section">
+        <div class="container">
+            <h2>Como nos encontrar</h2>
+            <p class="section-subtitle">Múltiplas formas de entrar em contato conosco</p>
+
+            <div class="contact-wrapper">
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <h3>Informações de Contato</h3>
+
+                    <div class="contact-item">
+                        <span class="contact-label">📞 Telefone</span>
+                        <div class="contact-value">
+                            <a href="tel:+551133334444">+55 (11) 3333-4444</a>
+                        </div>
+                        <p class="contact-desc">Ligue durante o horário comercial para falar com nossos especialistas</p>
+                    </div>
+
+                    <div class="contact-item">
+                        <span class="contact-label">📧 Email</span>
+                        <div class="contact-value">
+                            <a href="mailto:contato@tophighbrasil.com.br">contato@tophighbrasil.com.br</a>
+                        </div>
+                        <p class="contact-desc">Envie sua mensagem e responderemos em até 24 horas</p>
+                    </div>
+
+                    <div class="contact-item">
+                        <span class="contact-label">📍 Endereço</span>
+                        <div class="contact-value">
+                            São Paulo, SP<br>Brasil
+                        </div>
+                        <p class="contact-desc">Visite nossa matriz para conhecer nossos produtos e equipe</p>
+                    </div>
+
+                    <div class="contact-item">
+                        <span class="contact-label">💬 WhatsApp</span>
+                        <div class="contact-value">
+                            <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer">(11) 99999-9999</a>
+                        </div>
+                        <p class="contact-desc">Mensagens rápidas e atendimento instantâneo via WhatsApp</p>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Nome Completo</label>
+                        <input type="text" id="name" name="name" placeholder="Seu nome" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="seu.email@exemplo.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Telefone</label>
+                        <input type="tel" id="phone" name="phone" placeholder="(11) 9999-9999">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Assunto</label>
+                        <input type="text" id="subject" name="subject" placeholder="Assunto da sua mensagem" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Mensagem</label>
+                        <textarea id="message" name="message" placeholder="Descreva sua dúvida ou interesse..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="form-submit">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Top High Imagem Brasil</h4>
+                <p>Fornecedor de placas de impressão offset premium, com tecnologia de ponta e compromisso com a excelência desde 1998.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Links Rápidos</h4>
+                <a href="index.html">Início</a>
+                <a href="produtos.html">Produtos</a>
+                <a href="sobre.html">Sobre Nós</a>
+                <a href="contato.html">Contato</a>
+                <a href="https://en.ctptop.com.tw/">Conheça a Matriz</a>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contato</h4>
+                <p>📞 <strong>Telefone:</strong></p>
+                <a href="tel:+551133334444">+55 (11) 3333-4444</a>
+                <p style="margin-top: 1.5rem;">📧 <strong>E-mail:</strong></p>
+                <a href="mailto:contato@tophighbrasil.com.br">contato@tophighbrasil.com.br</a>
+                <p style="margin-top: 1.5rem;">📍 <strong>Endereço:</strong><br>São Paulo, SP, Brasil</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Top High Imagem Brasil. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP BUTTON -->
+    <a href="https://wa.me/5511999999999?text=Olá! Gostaria de receber mais informações sobre os produtos da Top High Imagem Brasil." target="_blank" rel="noopener noreferrer" class="whatsapp-button" title="Enviar mensagem via WhatsApp">
+        <img src="./whats.svg" alt="WhatsApp" width="32" height="32">
+    </a>
+
+    <script>
+        // Header Scroll Effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('mobile-active');
+        });
+
+        // Close menu when link is clicked
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('mobile-active');
+            });
+        });
+
+        // Smooth scroll for hash links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Form submission handler
+        const contactForm = document.querySelector('.contact-form');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Create WhatsApp message
+            const whatsappMessage = `*Novo Contato - Top High Imagem Brasil*\n\n*Nome:* ${name}\n*Email:* ${email}\n*Telefone:* ${phone}\n*Assunto:* ${subject}\n*Mensagem:* ${message}`;
+            
+            // Encode message for URL
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            
+            // Redirect to WhatsApp
+            window.open(`https://wa.me/5511999999999?text=${encodedMessage}`, '_blank');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Intersection Observer para animações ao scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.contact-item, .contact-form').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
