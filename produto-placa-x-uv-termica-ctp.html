@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Placa X-UV Térmica CTP - Top High Imagem Brasil</title>
-    <meta name="description" content="Placa X-UV Térmica CTP - Solução de alta performance para impressão offset de longa tiragem.">
+    <meta name="description" content="Placa X-UV Térmica CTP - Tecnologia CTP térmica de alta performance para aplicações profissionais.">
     
     <!-- Google Fonts: Poppins + Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -110,6 +110,7 @@
             justify-content: space-between;
             align-items: center;
             height: auto;
+            position: relative;
         }
 
         .logo {
@@ -129,14 +130,6 @@
             object-fit: contain;
             filter: brightness(0) invert(1);
             display: block;
-        }
-
-        .logo-text {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: var(--white);
-            display: none;
         }
 
         .logo img {
@@ -204,6 +197,8 @@
             flex-direction: column;
             cursor: pointer;
             gap: 5px;
+            z-index: 1001;
+            position: relative;
         }
 
         .hamburger span {
@@ -580,11 +575,12 @@
             height: 32px;
         }
 
-        /* MOBILE MENU */
+        /* MOBILE MENU - CORREÇÃO PRINCIPAL */
         #nav-menu {
             display: flex;
             gap: 3.5rem;
             align-items: center;
+            pointer-events: none;
         }
 
         #nav-menu.mobile-active {
@@ -600,6 +596,8 @@
             box-shadow: var(--shadow-lg);
             animation: slideInDown 0.3s ease-out;
             z-index: 999;
+            pointer-events: auto;
+            overflow-y: auto;
         }
 
         #nav-menu.mobile-active a {
@@ -628,15 +626,15 @@
                 height: 40px;
             }
 
-            .logo-text {
-                display: block;
-            }
-
             nav {
                 display: none;
             }
 
             #nav-menu {
+                display: none;
+            }
+
+            #nav-menu.mobile-active {
                 display: flex;
             }
 
@@ -755,12 +753,10 @@
         <div class="header-content">
             <a href="index.html" class="logo">
                 <img src="./logo-tophighbrasil.webp" alt="Top High Imagem Brasil Logo" class="logo-img">
-                <span class="logo-text">Top High</span>
             </a>
 
             <nav id="nav-menu">
                 <a href="produtos.html">Produtos</a>
-                <a href="diferenciais.html">Diferenciais</a>
                 <a href="sobre.html">Sobre Nós</a>
                 <a href="contato.html">Contato</a>
                 <a href="#" class="cta-button">Solicitar Orçamento</a>
@@ -778,7 +774,7 @@
     <section class="page-header" id="hero">
         <div class="page-header-content">
             <h1>Placa X-UV Térmica CTP</h1>
-            <p class="subtitle">Solução de alta performance para impressão offset de longa tiragem</p>
+            <p class="subtitle">Tecnologia CTP térmica de alta performance para aplicações profissionais</p>
         </div>
     </section>
 
@@ -798,55 +794,35 @@
                 <tbody>
                     <tr>
                         <td class="specs-label">Tipo de Placa</td>
-                        <td class="specs-value">Placa térmica positiva não-ablativa para longa tiragem. Com opção de pós-queima para tiragens extremamente longas com tintas normais e UV</td>
+                        <td class="specs-value">Placa térmica negativa ablativa para aplicações de alta tiragem</td>
                     </tr>
                     <tr>
                         <td class="specs-label">Espessura</td>
                         <td class="specs-value">0,15 / 0,30 mm</td>
                     </tr>
                     <tr>
-                        <td class="specs-label">Cor do Revestimento</td>
-                        <td class="specs-value">Azul</td>
-                    </tr>
-                    <tr>
                         <td class="specs-label">Sensibilidade Espectral</td>
                         <td class="specs-value">800 - 850 nm</td>
                     </tr>
                     <tr>
-                        <td class="specs-label">Compatibilidade com Equipamentos</td>
-                        <td class="specs-value">Kodak Trendsetter, Kodak Lotem, Kodak Magnus, Screen PT-R, Heidelberg Topsetter, Suprasetter e Luescher Xpose</td>
-                    </tr>
-                    <tr>
                         <td class="specs-label">Energia do Laser</td>
-                        <td class="specs-value">120 - 150 mJ/cm²</td>
+                        <td class="specs-value">80 - 120 mJ/cm² (Recomendado: 100 mJ/cm²)</td>
                     </tr>
                     <tr>
                         <td class="specs-label">Resolução</td>
                         <td class="specs-value">1% - 99% @ 200 lpi</td>
                     </tr>
                     <tr>
-                        <td class="specs-label">Capacidade FM</td>
-                        <td class="specs-value">20 micron estocástico</td>
-                    </tr>
-                    <tr>
-                        <td class="specs-label">Processadoras</td>
-                        <td class="specs-value">Qualquer processadora adequada para placas térmicas positivas</td>
-                    </tr>
-                    <tr>
-                        <td class="specs-label">Revelador</td>
-                        <td class="specs-value">TOP THP-8</td>
-                    </tr>
-                    <tr>
-                        <td class="specs-label">Processamento</td>
-                        <td class="specs-value">30 +/- 5 segundos de tempo de imersão a temperatura 23 ~ 25°C</td>
+                        <td class="specs-label">Compatibilidade com Equipamentos</td>
+                        <td class="specs-value">Agfa Avantra, Esko, Screen, Luxel, Kodak Creo Prinect, FUJI</td>
                     </tr>
                     <tr>
                         <td class="specs-label">Tiragem</td>
-                        <td class="specs-value">Até 150.000 impressões sem pós-queima. Até 30.000 impressões em aplicações UV (A tiragem real pode variar de acordo com a prensa, tinta e condições de papel)</td>
+                        <td class="specs-value">500.000 impressões (A tiragem real pode variar de acordo com a prensa, tinta e condições de papel)</td>
                     </tr>
                     <tr>
                         <td class="specs-label">Luz de Segurança</td>
-                        <td class="specs-value">2 horas sob luz branca</td>
+                        <td class="specs-value">Até 30 minutos sob luz branca / Até 8 horas sob luz amarela</td>
                     </tr>
                     <tr>
                         <td class="specs-label">Validade</td>
@@ -854,11 +830,15 @@
                     </tr>
                     <tr>
                         <td class="specs-label">Embalagem</td>
-                        <td class="specs-value">Disponível em todos os formatos padrão, incluindo embalagem a granel e formato Auto Pallet Loader (APL)</td>
+                        <td class="specs-value">Disponível em todos os formatos padrão</td>
+                    </tr>
+                    <tr>
+                        <td class="specs-label">Processamento</td>
+                        <td class="specs-value">Processamento pós-térmica recomendado para otimizar performance</td>
                     </tr>
                     <tr>
                         <td class="specs-label">Transporte e Armazenamento</td>
-                        <td class="specs-value">As embalagens fechadas devem ser armazenadas em posição horizontal e protegidas de frio, calor e umidade excessivos. Manter em ambiente controlado de 15 - 27°C e 40% - 65% UR, sem condensação</td>
+                        <td class="specs-value">Manter em local fresco e seco, protegido da luz solar direta. Temperatura ideal: 15 - 25°C, Umidade: 40% - 60% UR</td>
                     </tr>
                 </tbody>
             </table>
