@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placa X-UV Térmica CTP - Top High Imagem Brasil</title>
+    <meta name="description" content="Placa X-UV Térmica CTP - Solução de alta performance para impressão offset de longa tiragem.">
+    
+    <!-- Google Fonts: Poppins + Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #0066cc;
+            --primary-dark: #004099;
+            --primary-light: #3385ff;
+            --accent-silver: #f5f7fa;
+            --accent-gray: #e8ecf1;
+            --text-dark: #1a1a2e;
+            --text-light: #616d7d;
+            --border-light: #d4dce6;
+            --white: #ffffff;
+            --success: #10b981;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.12);
+            --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.15);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) translateX(0px);
+            }
+            50% {
+                transform: translateY(-20px) translateX(10px);
+            }
+        }
+
+        /* HEADER & NAVIGATION */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--text-dark);
+            box-shadow: var(--shadow-sm);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            background: var(--text-dark);
+            box-shadow: var(--shadow-md);
+            padding: 0.5rem 0;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: auto;
+        }
+
+        .logo {
+            flex-shrink: 0;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            animation: slideInLeft 0.6s ease-out;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .logo-img {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+            display: block;
+        }
+
+        .logo-text {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--white);
+            display: none;
+        }
+
+        .logo img {
+            height: 70%;
+            width: auto;
+            object-fit: contain;
+            display: block;
+        }
+
+        nav {
+            display: flex;
+            gap: 3.5rem;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-light);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary-light);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 0.65rem 1.75rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 102, 204, 0.4);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--white);
+            border-radius: 2px;
+            transition: 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* PAGE HEADER HERO */
+        .page-header {
+            margin-top: 70px;
+            position: relative;
+            overflow: hidden;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            padding: 6rem 2rem 4rem;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 64, 153, 0.6) 100%), 
+                        url('./background-page-products.png') center / cover;
+            background-attachment: fixed;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 64, 153, 0.5) 100%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .page-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(180deg, transparent 0%, rgba(26, 26, 46, 0.3) 100%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .page-header-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .page-header h1 {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            letter-spacing: -1px;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .page-header .subtitle {
+            font-size: clamp(1rem, 4vw, 1.5rem);
+            margin-bottom: 0;
+            font-weight: 400;
+            opacity: 0.95;
+            line-height: 1.5;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* CONTAINER */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* SEÇÕES */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        section h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 1rem;
+            text-align: center;
+            color: var(--text-dark);
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            animation: fadeInUp 0.8s ease-out 0.1s both;
+        }
+
+        /* SPECS SECTION */
+        .specs-section {
+            background: var(--white);
+        }
+
+        .specs-table {
+            width: 100%;
+            margin-top: 3rem;
+            border-collapse: collapse;
+            animation: fadeInUp 0.8s ease-out;
+            box-shadow: var(--shadow-md);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .specs-table thead {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-light) 100%);
+            color: var(--white);
+        }
+
+        .specs-table th {
+            padding: 1.25rem;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .specs-table td {
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .specs-table tbody tr:hover {
+            background: var(--accent-silver);
+            transition: background-color 0.3s ease;
+        }
+
+        .specs-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .specs-label {
+            font-weight: 600;
+            color: var(--text-dark);
+            width: 30%;
+        }
+
+        .specs-value {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* NAVIGATION SECTION */
+        .navigation-section {
+            background: linear-gradient(180deg, var(--accent-silver) 0%, var(--white) 100%);
+        }
+
+        .products-nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .nav-product-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            text-decoration: none;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.8s ease-out;
+            border: 2px solid transparent;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .nav-product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-blue);
+        }
+
+        .nav-product-image {
+            width: 100%;
+            height: 250px;
+            position: relative;
+            overflow: hidden;
+            background-image: url('./image-products.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-product-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        .nav-product-image::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 200px;
+            height: 200px;
+            background: rgba(128, 128, 128, 0.25);
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite;
+            z-index: 2;
+        }
+
+        .nav-product-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--white);
+            font-family: 'Poppins', sans-serif;
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            padding: 1rem 1.5rem;
+            margin: 0;
+        }
+
+        .nav-product-content {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            flex-grow: 1;
+        }
+
+        .nav-product-desc {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+            flex-grow: 1;
+        }
+
+        .nav-product-link {
+            color: var(--primary-blue);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            width: fit-content;
+        }
+
+        .nav-product-card:hover .nav-product-link {
+            transform: translateX(4px);
+        }
+
+        /* FOOTER */
+        footer {
+            background: linear-gradient(135deg, var(--text-dark) 0%, #2d3a4f 100%);
+            color: var(--white);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 4rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .footer-section h4 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 1.25rem;
+            font-weight: 700;
+        }
+
+        .footer-section p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            line-height: 2rem;
+        }
+
+        .footer-section a {
+            display: inline-block;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 0.95rem;
+            margin-bottom: 0.75rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-light);
+        }
+
+        .footer-section:nth-child(2) {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-section:nth-child(2) > a {
+            display: inline;
+            margin-right: 1.5rem;
+            margin-bottom: 0;
+            line-height: 2.5rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* WHATSAPP BUTTON */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-lg);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            animation: pulse 2s ease-in-out infinite;
+            z-index: 999;
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+            animation: none;
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+        }
+
+        .whatsapp-button img {
+            width: 32px;
+            height: 32px;
+        }
+
+        /* MOBILE MENU */
+        #nav-menu {
+            display: flex;
+            gap: 3.5rem;
+            align-items: center;
+        }
+
+        #nav-menu.mobile-active {
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            flex-direction: column;
+            gap: 2rem;
+            background: var(--white);
+            padding: 2rem;
+            box-shadow: var(--shadow-lg);
+            animation: slideInDown 0.3s ease-out;
+            z-index: 999;
+        }
+
+        #nav-menu.mobile-active a {
+            color: var(--text-dark);
+            text-decoration: none;
+        }
+
+        #nav-menu.mobile-active a::after {
+            display: none;
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .logo-img {
+                height: 40px;
+            }
+
+            .logo-text {
+                display: block;
+            }
+
+            nav {
+                display: none;
+            }
+
+            #nav-menu {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .header-content {
+                padding: 0.75rem 1.5rem;
+            }
+
+            section {
+                padding: 3.5rem 1.5rem;
+            }
+
+            .page-header {
+                min-height: 350px;
+                padding: 3rem 1.5rem;
+                margin-top: 70px;
+                background-attachment: scroll;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .page-header .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .specs-label {
+                width: 40%;
+            }
+
+            .products-nav-grid {
+                gap: 1.5rem;
+            }
+
+            .nav-product-image {
+                height: 200px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .whatsapp-button {
+                bottom: 1.5rem;
+                right: 1.5rem;
+                width: 55px;
+                height: 55px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-header {
+                min-height: 300px;
+                padding: 2rem 1rem;
+                background-attachment: scroll;
+            }
+
+            .page-header h1 {
+                font-size: 1.5rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .page-header .subtitle {
+                font-size: 0.95rem;
+            }
+
+            section {
+                padding: 2.5rem 1rem;
+            }
+
+            section h2 {
+                font-size: 1.75rem;
+            }
+
+            .specs-table th,
+            .specs-table td {
+                padding: 0.75rem;
+                font-size: 0.9rem;
+            }
+
+            .specs-label {
+                width: 50%;
+            }
+
+            .products-nav-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-product-image {
+                height: 200px;
+            }
+
+            .nav-product-title {
+                font-size: 1.1rem;
+                padding: 0.75rem 1rem;
+            }
+
+            .nav-product-content {
+                padding: 1rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header id="header">
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <img src="./logo-tophighbrasil.webp" alt="Top High Imagem Brasil Logo" class="logo-img">
+                <span class="logo-text">Top High</span>
+            </a>
+
+            <nav id="nav-menu">
+                <a href="produtos.html">Produtos</a>
+                <a href="diferenciais.html">Diferenciais</a>
+                <a href="sobre.html">Sobre Nós</a>
+                <a href="contato.html">Contato</a>
+                <a href="#" class="cta-button">Solicitar Orçamento</a>
+            </nav>
+
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- PAGE HEADER -->
+    <section class="page-header" id="hero">
+        <div class="page-header-content">
+            <h1>Placa X-UV Térmica CTP</h1>
+            <p class="subtitle">Solução de alta performance para impressão offset de longa tiragem</p>
+        </div>
+    </section>
+
+    <!-- SPECS SECTION -->
+    <section class="specs-section">
+        <div class="container">
+            <h2>Especificações Técnicas</h2>
+            <p class="section-subtitle">Características e performance da placa</p>
+
+            <table class="specs-table">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Descrição</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="specs-label">Tipo de Placa</td>
+                        <td class="specs-value">Placa térmica positiva não-ablativa para longa tiragem. Com opção de pós-queima para tiragens extremamente longas com tintas normais e UV</td>
+                    </tr>
+                    <tr>
+                        <td class="specs-label">Espessura</td>
+                        <td class="specs-value">0,15 / 0,30 mm</td>
+                    </tr>
+                    <tr>
+                        <td class="specs-label">Cor do Revestimento</td>
+                        <td class="specs-value">Azul</td>
+                    </tr>
+                    <tr>
+                        <td class="specs-label">Sensibilidade Espectral</td>
+                        <td class="specs-value">800 - 850 nm</td>
+                    </tr>
+                    <tr>
+                        <td class="specs-label">Compatibilidade com Equipamentos</td>
+                        <td class="specs-value">Kodak Trendsetter, Kodak Lotem, Kodak Magnus, Screen PT-R, Heidelberg Topsetter, Suprasetter e Luescher Xpose</td>
+                    </tr>
+                    <tr>
+                        <td class="specs-label">Energia do Laser</td>
+                        <td class="specs-value">120 - 150 mJ/cm²</td>
+                    </tr>
+                    <tr>
+                        <td class="specs-label">Resolução</td>
+                        <td class="specs-value">1% - 99% @ 200 lpi</td>
+                    </tr>
+                    <tr>
+                        <td class="specs-label">Capacidade FM</td>
+                        <td class="specs-value">20 micron estocástico</td>
+                    </tr>
+                    <tr>
+                        <td class="specs-label">Processadoras</td>
+                        <td class="specs-value">Qualquer processadora adequada para placas térmicas positivas</td>
+                    </tr>
+                    <tr>
+                        <td class="specs-label">Revelador</td>
+                        <td class="specs-value">TOP THP-8</td>
+                    </tr>
+                    <tr>
+                        <td class="specs-label">Processamento</td>
+                        <td class="specs-value">30 +/- 5 segundos de tempo de imersão a temperatura 23 ~ 25°C</td>
+                    </tr>
+                    <tr>
+                        <td class="specs-label">Tiragem</td>
+                        <td class="specs-value">Até 150.000 impressões sem pós-queima. Até 30.000 impressões em aplicações UV (A tiragem real pode variar de acordo com a prensa, tinta e condições de papel)</td>
+                    </tr>
+                    <tr>
+                        <td class="specs-label">Luz de Segurança</td>
+                        <td class="specs-value">2 horas sob luz branca</td>
+                    </tr>
+                    <tr>
+                        <td class="specs-label">Validade</td>
+                        <td class="specs-value">12 meses em condições de armazenamento recomendadas</td>
+                    </tr>
+                    <tr>
+                        <td class="specs-label">Embalagem</td>
+                        <td class="specs-value">Disponível em todos os formatos padrão, incluindo embalagem a granel e formato Auto Pallet Loader (APL)</td>
+                    </tr>
+                    <tr>
+                        <td class="specs-label">Transporte e Armazenamento</td>
+                        <td class="specs-value">As embalagens fechadas devem ser armazenadas em posição horizontal e protegidas de frio, calor e umidade excessivos. Manter em ambiente controlado de 15 - 27°C e 40% - 65% UR, sem condensação</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="https://wa.me/5511999999999?text=Olá! Gostaria de receber mais informações sobre a Placa X-UV Térmica CTP da Top High Imagem Brasil." target="_blank" rel="noopener noreferrer" style="display: inline-block; background: linear-gradient(135deg, #25d366 0%, #128c7e 100%); color: white; padding: 1rem 2.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);">
+                    Falar com a Top High Brasil
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- NAVIGATION SECTION -->
+    <section class="navigation-section">
+        <div class="container">
+            <h2>Conheça outros produtos</h2>
+            <p class="section-subtitle">Explore as outras soluções em placas de impressão</p>
+
+            <div class="products-nav-grid">
+                <a href="produto-placa-t-20-process-free.html" class="nav-product-card">
+                    <div class="nav-product-image">
+                        <div class="nav-product-title">Placa T-20 Process Free</div>
+                    </div>
+                    <div class="nav-product-content">
+                        <p class="nav-product-desc">Solução ecológica sem processamento químico para impressão offset</p>
+                        <span class="nav-product-link">Conheça →</span>
+                    </div>
+                </a>
+
+                <a href="produto-placa-hs-920-uv-positiva.html" class="nav-product-card">
+                    <div class="nav-product-image">
+                        <div class="nav-product-title">Placa HS-920 UV CTP Positiva</div>
+                    </div>
+                    <div class="nav-product-content">
+                        <p class="nav-product-desc">Placa positiva UV CTP com excelente resolução e durabilidade</p>
+                        <span class="nav-product-link">Conheça →</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contato">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Top High Imagem Brasil</h4>
+                <p>Fornecedor de placas de impressão offset premium, com tecnologia de ponta e compromisso com a excelência desde 1998.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Links Rápidos</h4>
+                <a href="index.html">Início</a>
+                <a href="produtos.html">Produtos</a>
+                <a href="sobre.html">Sobre Nós</a>
+                <a href="contato.html">Contato</a>
+                <a href="https://en.ctptop.com.tw/">Conheça a Matriz</a>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contato</h4>
+                <p>📞 <strong>Telefone:</strong></p>
+                <a href="tel:+551133334444">+55 (11) 3333-4444</a>
+                <p style="margin-top: 1.5rem;">📧 <strong>E-mail:</strong></p>
+                <a href="mailto:contato@tophighbrasil.com.br">contato@tophighbrasil.com.br</a>
+                <p style="margin-top: 1.5rem;">📍 <strong>Endereço:</strong><br>São Paulo, SP, Brasil</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Top High Imagem Brasil. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP BUTTON -->
+    <a href="https://wa.me/5511999999999?text=Olá! Gostaria de receber mais informações sobre a Placa X-UV Térmica CTP da Top High Imagem Brasil." target="_blank" rel="noopener noreferrer" class="whatsapp-button" title="Enviar mensagem via WhatsApp">
+        <img src="./whats.svg" alt="WhatsApp" width="32" height="32">
+    </a>
+
+    <script>
+        // Header Scroll Effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('mobile-active');
+        });
+
+        // Close menu when link is clicked
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('mobile-active');
+            });
+        });
+
+        // Smooth scroll for hash links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
