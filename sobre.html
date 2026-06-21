@@ -110,6 +110,8 @@
             align-items: center;
             gap: 0.75rem;
             animation: slideInLeft 0.6s ease-out;
+            text-decoration: none;
+            cursor: pointer;
         }
 
         .logo-img {
@@ -227,7 +229,7 @@
             color: var(--white);
             padding: 6rem 2rem 4rem;
             background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 64, 153, 0.6) 100%), 
-                        url('./background_top.webp') center / cover;
+                        url('./background-sobre.webp') center / cover;
             background-attachment: fixed;
         }
 
@@ -647,14 +649,11 @@
 
         #nav-menu.mobile-active a {
             color: var(--text-dark);
+            text-decoration: none;
         }
 
-        #nav-menu.mobile-active a:hover {
-            color: var(--primary-blue);
-        }
-
-        #nav-menu.mobile-active a:hover::after {
-            background: var(--primary-blue);
+        #nav-menu.mobile-active a::after {
+            display: none;
         }
 
         @keyframes slideInDown {
@@ -899,16 +898,16 @@
     <!-- HEADER -->
     <header id="header">
         <div class="header-content">
-            <div class="logo">
+            <a href="index.html" class="logo">
                 <img src="./logo-tophighbrasil.webp" alt="Top High Imagem Brasil Logo" class="logo-img">
                 <span class="logo-text">Top High</span>
-            </div>
+            </a>
 
             <nav id="nav-menu">
-                <a href="index.html#produtos">Produtos</a>
-                <a href="index.html#beneficios">Diferenciais</a>
-                <a href="about.html">Sobre Nós</a>
-                <a href="index.html#contato">Contato</a>
+                <a href="produtos.html">Produtos</a>
+                <a href="diferenciais.html">Diferenciais</a>
+                <a href="sobre.html">Sobre Nós</a>
+                <a href="contato.html">Contato</a>
                 <a href="#" class="cta-button">Solicitar Orçamento</a>
             </nav>
 
@@ -1152,10 +1151,10 @@
             <div class="footer-section">
                 <h4>Links Rápidos</h4>
                 <a href="index.html">Início</a>
-                <a href="index.html#produtos">Produtos</a>
-                <a href="about.html">Sobre Nós</a>
-                <a href="index.html#contato">Contato</a>
-                <a href="#">Conheça a Matriz</a>
+                <a href="produtos.html">Produtos</a>
+                <a href="sobre.html">Sobre Nós</a>
+                <a href="contato.html">Contato</a>
+                <a href="https://en.ctptop.com.tw/">Conheça a Matriz</a>
             </div>
 
             <div class="footer-section">
