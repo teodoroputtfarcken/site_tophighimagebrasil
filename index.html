@@ -903,11 +903,12 @@
             height: 32px;
         }
 
-        /* MOBILE MENU */
+        /* MOBILE MENU - CORREÇÃO PRINCIPAL */
         #nav-menu {
             display: flex;
             gap: 3.5rem;
             align-items: center;
+            pointer-events: none;
         }
 
         #nav-menu.mobile-active {
@@ -923,6 +924,8 @@
             box-shadow: var(--shadow-lg);
             animation: slideInDown 0.3s ease-out;
             z-index: 999;
+            pointer-events: auto;
+            overflow-y: auto;
         }
 
         #nav-menu.mobile-active a {
@@ -963,6 +966,10 @@
             }
 
             #nav-menu {
+                display: none;
+            }
+
+            #nav-menu.mobile-active {
                 display: flex;
             }
 
