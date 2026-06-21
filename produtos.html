@@ -356,20 +356,30 @@
             background-image: url('./image-products.jpg');
             background-size: cover;
             background-position: center;
-            filter: blur(2px);
         }
 
         .product-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        .product-image::after {
             content: '';
             position: absolute;
             top: -50%;
             right: -10%;
             width: 200px;
             height: 200px;
-            background: rgba(0, 102, 204, 0.15);
+            background: rgba(128, 128, 128, 0.25);
             border-radius: 50%;
             animation: float 8s ease-in-out infinite;
-            z-index: 1;
+            z-index: 2;
         }
 
         .product-content {
@@ -383,9 +393,12 @@
         .product-name {
             font-size: 1.3rem;
             font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 1rem;
+            color: var(--white);
             font-family: 'Poppins', sans-serif;
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            padding: 1rem 1.5rem;
         }
 
         .product-link {
@@ -699,33 +712,30 @@
             <div class="products-grid">
                 <!-- Produto 1 -->
                 <a href="produto-placa-t-20-process-free.html" class="product-container">
-                    <div class="product-content" style="order: -1; border-bottom: 1px solid var(--border-light); padding-bottom: 1.5rem;">
+                    <div class="product-image">
                         <div class="product-name">Placa T-20 Process Free</div>
                     </div>
-                    <div class="product-image"></div>
-                    <div class="product-content" style="padding-top: 1.5rem;">
+                    <div class="product-content">
                         <div class="product-link">Ver Detalhes</div>
                     </div>
                 </a>
 
                 <!-- Produto 2 -->
                 <a href="produto-placa-x-uv-termica-ctp.html" class="product-container">
-                    <div class="product-content" style="order: -1; border-bottom: 1px solid var(--border-light); padding-bottom: 1.5rem;">
+                    <div class="product-image">
                         <div class="product-name">Placa X-UV Térmica CTP</div>
                     </div>
-                    <div class="product-image"></div>
-                    <div class="product-content" style="padding-top: 1.5rem;">
+                    <div class="product-content">
                         <div class="product-link">Ver Detalhes</div>
                     </div>
                 </a>
 
                 <!-- Produto 3 -->
                 <a href="produto-placa-hs-920-uv-positiva.html" class="product-container">
-                    <div class="product-content" style="order: -1; border-bottom: 1px solid var(--border-light); padding-bottom: 1.5rem;">
+                    <div class="product-image">
                         <div class="product-name">Placa HS-920 UV CTP Positiva</div>
                     </div>
-                    <div class="product-image"></div>
-                    <div class="product-content" style="padding-top: 1.5rem;">
+                    <div class="product-content">
                         <div class="product-link">Ver Detalhes</div>
                     </div>
                 </a>
