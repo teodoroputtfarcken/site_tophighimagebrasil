@@ -1303,12 +1303,19 @@
         const hamburger = document.getElementById('hamburger');
         const navMenu = document.getElementById('nav-menu');
 
+        console.log('🔍 DEBUG:', {
+            hamburgerExists: hamburger !== null,
+            hamburger: hamburger,
+            navMenuExists: navMenu !== null,
+            navMenu: navMenu
+        });
+
         if (hamburger && navMenu) {
             hamburger.addEventListener('click', (e) => {
                 e.stopPropagation();
                 hamburger.classList.toggle('active');
                 navMenu.classList.toggle('mobile-active');
-                alert('Menu clicado!'); // Teste
+                console.log('✅ Hamburger clicado!');
             });
 
             // Close menu when link is clicked
@@ -1318,6 +1325,10 @@
                     navMenu.classList.remove('mobile-active');
                 });
             });
+        } else {
+            console.error('❌ ERRO: Hamburger ou NavMenu não encontrado!');
+            console.log('Procurando #hamburger:', document.querySelector('#hamburger'));
+            console.log('Procurando #nav-menu:', document.querySelector('#nav-menu'));
         }
 
         // Smooth scroll for hash links ONLY
