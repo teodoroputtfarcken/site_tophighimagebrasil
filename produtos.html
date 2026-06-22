@@ -196,7 +196,8 @@
             flex-direction: column;
             cursor: pointer;
             gap: 5px;
-            z-index: 1001;
+            z-index: 1002;
+            pointer-events: auto;
             position: relative;
         }
 
@@ -529,6 +530,7 @@
 
         /* MOBILE MENU - CORREÇÃO PRINCIPAL */
         #nav-menu {
+            pointer-events: auto;
             display: flex;
             gap: 3.5rem;
             align-items: center;
@@ -582,6 +584,7 @@
             }
 
             #nav-menu {
+            pointer-events: auto;
                 display: none;
             }
 
@@ -799,18 +802,21 @@
         const hamburger = document.getElementById('hamburger');
         const navMenu = document.getElementById('nav-menu');
 
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('mobile-active');
-        });
-
-        // Close menu when link is clicked
-        navMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('mobile-active');
+        if (hamburger && navMenu) {
+            hamburger.addEventListener('click', (e) => {
+                e.stopPropagation();
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('mobile-active');
             });
-        });
+
+            // Close menu when link is clicked
+            navMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('mobile-active');
+                });
+            });
+        }
 
         // Smooth scroll for hash links ONLY
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -855,5 +861,6 @@
             });
         }
         highlightActiveMenuLink();
+    </script>
 </body>
 </html>
