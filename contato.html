@@ -548,7 +548,6 @@
             display: flex;
             gap: 3.5rem;
             align-items: center;
-            pointer-events: none;
         }
 
         #nav-menu.mobile-active {
@@ -859,7 +858,7 @@
             });
         });
 
-        // Smooth scroll for hash links
+        // Smooth scroll for hash links ONLY
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
