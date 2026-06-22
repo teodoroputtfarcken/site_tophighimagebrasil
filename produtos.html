@@ -164,6 +164,14 @@
             width: 100%;
         }
 
+        nav a.active {
+            color: var(--primary-light);
+        }
+
+        nav a.active::after {
+            width: 100%;
+        }
+
         .cta-button {
             background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-light) 100%);
             color: var(--white);
@@ -524,7 +532,6 @@
             display: flex;
             gap: 3.5rem;
             align-items: center;
-            pointer-events: none;
         }
 
         #nav-menu.mobile-active {
@@ -805,7 +812,7 @@
             });
         });
 
-        // Smooth scroll for hash links
+        // Smooth scroll for hash links ONLY
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -834,6 +841,19 @@
         document.querySelectorAll('.product-container').forEach(el => {
             observer.observe(el);
         });
-    </script>
+
+        // Highlight active menu link
+        function highlightActiveMenuLink() {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            const navLinks = document.querySelectorAll('#nav-menu a');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === currentPage || 
+                    (currentPage === '' && link.getAttribute('href') === 'index.html')) {
+                    link.classList.add('active');
+                }
+            });
+        }
+        highlightActiveMenuLink();
 </body>
 </html>
