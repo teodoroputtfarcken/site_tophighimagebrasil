@@ -1221,33 +1221,13 @@
 
             <div class="about-content">
                 <div class="about-text">
-                    <h3>Sua Parceira em Progresso Industrial</h3>
-                    <p>A Top High Image iniciou suas atividades como departamento especializado de placas PS, sendo escolhida como uma das 500 maiores empresas de Taiwan em 1995.</p>
+                                        <p>A Top High Image iniciou suas atividades como departamento especializado de placas PS, sendo escolhida como uma das 500 maiores empresas de Taiwan em 1995.</p>
                     <p>Em 1998, desenvolveu com sucesso suas primeiras placas PS propriedade, consolidando-se como líder em inovação tecnológica. Segundo relatório da Business Times (2002), as vendas já superavam fabricantes internacionais no mercado taiwanês.</p>
                     <p>Agora, trazemos essa excelência para o Brasil, oferecendo soluções de qualidade mundial com suporte técnico local especializado.</p>
                     <a href="sobre.html" class="btn">Conheça Nossa História</a>
                 </div>
                 <div class="about-image">
                     <img src="./worker.jpg" alt="Ambiente de Trabalho Top High">
-                </div>
-            </div>
-
-            <div class="about-stats">
-                <div class="about-stat">
-                    <div class="number">1455+</div>
-                    <div class="label">Clientes em Todo o Mundo</div>
-                </div>
-                <div class="about-stat">
-                    <div class="number">86</div>
-                    <div class="label">Países Atendidos</div>
-                </div>
-                <div class="about-stat">
-                    <div class="number">1998</div>
-                    <div class="label">Ano de Fundação</div>
-                </div>
-                <div class="about-stat">
-                    <div class="number">ISO 9001</div>
-                    <div class="label">Certificação Qualidade</div>
                 </div>
             </div>
         </div>
@@ -1367,16 +1347,19 @@
         // Highlight active menu link
         function highlightActiveMenuLink() {
             const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-            const navLinks = document.querySelectorAll('#nav-menu a');
+            const navLinks = document.querySelectorAll('#nav-menu a:not(.cta-button)');
+
             navLinks.forEach(link => {
                 link.classList.remove('active');
-                if (link.getAttribute('href') === currentPage || 
-                    (currentPage === '' && link.getAttribute('href') === 'index.html') ||
-                    currentPage === 'index.html') {
+
+                const href = link.getAttribute('href');
+
+                if (href === currentPage) {
                     link.classList.add('active');
                 }
             });
         }
+
         highlightActiveMenuLink();
     </script>
 </body>
